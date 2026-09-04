@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Object Detection & Tracking</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #222;
+        }
+
+        header {
+            background: #1f2937;
+            color: white;
+            padding: 20px 40px;
+        }
+
+        header h1 {
+            font-size: 28px;
+        }
+
+        header p {
+            margin-top: 5px;
+            color: #d1d5db;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h2 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .video-container {
+            background: #111827;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .video-container img {
+            width: 100%;
+            display: block;
+        }
+
+        .status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            background: #22c55e;
+            border-radius: 50%;
+        }
+
+        .status-text {
+            font-weight: bold;
+        }
+
+        .info-box {
+            background: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .info-box strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        @media (max-width: 800px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>AI Object Detection & Tracking</h1>
+        <p>YOLO + SORT Real-Time Detection System</p>
+    </header>
+
+    <div class="container">
+
+        <div class="dashboard">
+
+            <!-- Live Camera -->
+            <div class="card">
+
+                <h2>Live Camera Feed</h2>
+
+                <div class="video-container">
+                    <img src="{{ url_for('video_feed') }}"
+                         alt="Live Object Detection Feed">
+                </div>
+
+            </div>
+
+            <!-- System Information -->
+            <div class="card">
+
+                <h2>System Status</h2>
+
+                <div class="status">
+                    <div class="status-dot"></div>
+                    <div class="status-text">Detection Active</div>
+                </div>
+
+                <div class="info-box">
+                    <strong>Detection Model</strong>
+                    YOLO11n
+                </div>
+
+                <div class="info-box">
+                    <strong>Tracking Algorithm</strong>
+                    SORT
+                </div>
+
+                <div class="info-box">
+                    <strong>Input</strong>
+                    Live Webcam
+                </div>
+
+                <div class="info-box">
+                    <strong>Processing</strong>
+                    Real-Time
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer">
+            AI Object Detection & Tracking System
+        </div>
+
+    </div>
+
+</body>
+
+</html>
